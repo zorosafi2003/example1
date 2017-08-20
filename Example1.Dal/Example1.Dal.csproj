@@ -56,8 +56,8 @@
     <Compile Include="Concrete\AppDbContext.cs" />
     <Compile Include="Entities\TblProduct.cs" />
     <Compile Include="Entities\TblCustomer.cs" />
-    <Compile Include="Entities\TblJournalDetail.cs" />
-    <Compile Include="Entities\TblJournalMaster.cs" />
+    <Compile Include="Entities\TblInvoiceDetail.cs" />
+    <Compile Include="Entities\TblInvoiceMaster.cs" />
     <Compile Include="Migrations\201708192326126_db1.cs" />
     <Compile Include="Migrations\201708192326126_db1.Designer.cs">
       <DependentUpon>201708192326126_db1.cs</DependentUpon>

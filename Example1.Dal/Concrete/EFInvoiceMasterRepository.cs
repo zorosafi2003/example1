@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace ECommerceApp.Dal.Concrete.Accounting
+namespace Example1.Dal.Concrete
 {
     public class EFInvoiceMasterRepository : IInvoiceMasterRepository
     {
