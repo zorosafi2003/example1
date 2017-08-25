@@ -1,4 +1,5 @@
 ﻿using Example1.Dal.Abstract;
+using Example1.Dal.Entities;
 using Example1.Mvc.Models;
 using System;
 using System.Collections.Generic;
@@ -44,16 +45,16 @@ namespace Example1.Mvc.Controllers
             return ae;
         }
 
-        public void Post([FromBody]CustomerEx customer)
+        public void Post([FromBody]TblCustomer customer)
         {
 
-            repository.Insert(customer.TblCustomer);
+            repository.Insert(customer);
         }
 
-        public void Put([FromBody]CustomerEx customer)
+        public void Put([FromBody]TblCustomer customer)
         {
 
-            repository.Update(customer.TblCustomer);
+            repository.Update(customer);
         }
 
         public void Delete(string id)

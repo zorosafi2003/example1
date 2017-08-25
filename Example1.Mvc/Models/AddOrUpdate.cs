@@ -8,5 +8,7 @@ namespace Example1.Mvc.Models
     public class AddOrUpdate
     {
         public object Data { get; set; }
+        public IEnumerable<object> Products { get; set; }
+        public IEnumerable< object> Customers { get; set; }
     }
 }

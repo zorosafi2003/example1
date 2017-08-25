@@ -1,0 +1,63 @@
+﻿
+
+<div class="box-body">
+    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+        <div class="row">
+            <div class="col-sm-2">
+                <a class="btn btn-block btn-primary " ng-href="#/customer/add">New</a>
+            </div>
+            <div class="col-sm-10">
+
+                <div id="example1_filter" class="dataTables_filter" style="float:right">
+                    <input class="form-control " type="text" placeholder="Search by Name" ng-model="search" ng-change="SearchChange()">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                    <thead>
+                        <tr role="row">
+
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" ng-repeat="head in Headers" style="text-align:center;">{{head}}</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr role="row" class="odd" style="text-align:center;" ng-repeat="Detail in Details">
+                            <td>{{Detail.Id}}</td>
+                            <td>{{Detail.Name}}</td>
+                            <td>{{Detail.Address}}</td>
+                            <td>{{Detail.Phone}}</td>
+                            <td><a href="#/customer/edit/{{Detail.Guid}}"><i class="fa fa-fw  fa-pencil"></i></a></td>
+                            <td><a href="javascript:void(0)"><i ng-click="Remove(Detail.Guid)" class="fa fa-fw fa-close"></i></a></td>
+
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1" ng-repeat="head in Headers" style="text-align:center;">{{head}}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing {{bigCurrentPage * 10  - 9}} to {{bigCurrentPage * 10}} of {{bigTotalItems}} entries</div>
+            </div>
+            <div class="col-sm-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                    <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" ng-change="SearchChange()"></uib-pagination>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="NgAlerts">
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+</div>

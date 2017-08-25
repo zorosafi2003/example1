@@ -1,107 +1,3 @@
-## `@uirouter/angularjs` 1.0.6 (2017-08-12)
-[Compare `@uirouter/angularjs` versions 1.0.5 and 1.0.6](https://github.com/angular-ui/ui-router/compare/1.0.5...1.0.6)
-
-### Bug Fixes
-
-* **sourcemaps:** Embed sources inline into sourcemaps ([4baa430](https://github.com/angular-ui/ui-router/commit/4baa430))
-
-
-
-## Changes in `@uirouter/core` between versions [5.0.5 and 5.0.6](https://github.com/ui-router/core/compare/5.0.5...5.0.6) (2017-08-12)
-
-
-### Bug Fixes
-
-* **sourceMaps:** Embed typescript sources in sourcemaps ([10558a3](https://github.com/ui-router/core/commit/10558a3))
-* **typescript:** Fix strictNullCheck type error ([0ae585e](https://github.com/ui-router/core/commit/0ae585e))
-* **urlRouter:** Fix absolute 'href' generation by using location.hostname (not location.host) ([a28b68a](https://github.com/ui-router/core/commit/a28b68a))
-* **urlService:** Fix priority sorting of URL rules ([73a1fe0](https://github.com/ui-router/core/commit/73a1fe0))
-
-
-
-<a name="1.0.5"></a>
-## [1.0.5](https://github.com/angular-ui/ui-router/compare/1.0.4...1.0.5) (2017-06-29)
-
-Updated to @uirouter/core 5.0.5 and addressed typescript 2.4 breaking changes
-
-## Changes in `@uirouter/core` between versions [5.0.3 and 5.0.5](https://github.com/ui-router/core/compare/5.0.3...5.0.5) (2017-06-29)
-
-
-### Bug Fixes
-
-* **future:** Allow future states to specify a `parent:` ([828fe1b](https://github.com/ui-router/core/commit/828fe1b))
-* **typescript:** Update to typescript 2.4 ([ce1669b](https://github.com/ui-router/core/commit/ce1669b))
-* **view:** only sync views which are of the same name *and type* ([c48da4a](https://github.com/ui-router/core/commit/c48da4a))
-
-
-### Features
-
-* **invalidTransition:** Better error messaging when param values are invalid ([2a15d1a](https://github.com/ui-router/core/commit/2a15d1a))
-* **trace:** Trace view synchronization. Allow trace.enable(...string) ([284392d](https://github.com/ui-router/core/commit/284392d))
-* **urlMatcher:** add support for multiline urls ([5b11ce0](https://github.com/ui-router/core/commit/5b11ce0))
-
-
-
-<a name="1.0.4"></a>
-## [1.0.4](https://github.com/angular-ui/ui-router/compare/1.0.3...1.0.4) (2017-06-09)
-
-
-### Bug Fixes
-
-* **bundle:** work around rollup bug https://github.com/rollup/rollup/issues/1322 ([befb50a](https://github.com/angular-ui/ui-router/commit/befb50a))
-* **uiSrefActive:** Avoid "Possibly unhandled rejection" in console ([5c09e28](https://github.com/angular-ui/ui-router/commit/5c09e28))
-
-
-
-### @uirouter/core changes
-## [5.0.4](https://github.com/ui-router/core/compare/5.0.3...5.0.4) (2017-06-09)
-
-
-### Bug Fixes
-
-* **future:** Allow future states to specify a `parent:` ([828fe1b](https://github.com/ui-router/core/commit/828fe1b))
-* **view:** only sync views which are of the same name *and type* ([c48da4a](https://github.com/ui-router/core/commit/c48da4a))
-
-
-### Features
-
-* **invalidTransition:** Better error messaging when param values are invalid ([2a15d1a](https://github.com/ui-router/core/commit/2a15d1a))
-* **trace:** Trace view synchronization. Allow trace.enable(...string) ([284392d](https://github.com/ui-router/core/commit/284392d))
-
-
-
-<a name="1.0.3"></a>
-## [1.0.3](https://github.com/angular-ui/ui-router/compare/1.0.1...1.0.3) (2017-05-07)
-
-
-### Bug Fixes
-
-* **templateFactory:** Do not prepend x- to attribute names unless necessary. ([e573f06](https://github.com/angular-ui/ui-router/commit/e573f06))
-
-
-### Features
-
-* **build:** Publish non-monolithic @uirouter/angularjs UMD bundle `ui-router-angularjs.js` ([8db3696](https://github.com/angular-ui/ui-router/commit/8db3696))
-  ** Note: this change is necessary to properly support plugins which depend on @uirouter/core
-
-
-
-### @uirouter/core changes
-## [5.0.3](https://github.com/ui-router/core/compare/5.0.1...5.0.3) (2017-05-07)
-
-
-### Bug Fixes
-
-* **common:** Fix implementation of 'pick' -- use hasOwnProperty ([09848a4](https://github.com/ui-router/core/commit/09848a4))
-* **common:** Re-fix implementation of 'pick' using for .. in ([f2da7f4](https://github.com/ui-router/core/commit/f2da7f4))
-
-
-### Features
-
-* **build:** Build and distribute @uirouter/core UMD bundles ([0a8da85](https://github.com/ui-router/core/commit/0a8da85))
-
-
-
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/angular-ui/ui-router/compare/1.0.0...1.0.1) (2017-05-04)
 
@@ -141,8 +37,8 @@ Updated to @uirouter/core 5.0.5 and addressed typescript 2.4 breaking changes
 UI-Router for AngularJS version 1.0.0 updates `ui-router-core@3.1.0` to `@uirouter/core@5.0.1`.
 Please keep reading to see if the breaking changes from core between 3.1.0 and 5.0.1 affect you.
 
-### `@uirouter/core` changes
-# [diff to 3.1.0](https://github.com/ui-router/core/compare/3.1.0...5.0.1) (2017-04-30)
+### @uirouter/core changes
+# [5.0.0](https://github.com/ui-router/core/compare/3.1.0...5.0.1) (2017-04-30)
 
 ### Bug Fixes
 

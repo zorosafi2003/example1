@@ -5,7 +5,6 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 import visualizer from 'rollup-plugin-visualizer';
 
 var MINIFY = process.env.MINIFY;
-var MONOLITHIC = process.env.MONOLITHIC;
 var ROUTER = process.env.ROUTER;
 var EVENTS = process.env.EVENTS;
 var RESOLVE = process.env.RESOLVE;
@@ -13,18 +12,7 @@ var RESOLVE = process.env.RESOLVE;
 var pkg = require('./package.json');
 var banner =
 `/**
- * ${pkg.description}`;
-if (ROUTER && MONOLITHIC) {
-  banner += `
- * NOTICE: This monolithic bundle also bundles the @uirouter/core code.
- *         This causes it to be incompatible with plugins that depend on @uirouter/core.
- *         We recommend switching to the ui-router-core.js and ui-router-angularjs.js bundles instead.
- *         For more information, see https://ui-router.github.io/blog/uirouter-for-angularjs-umd-bundles`
-} else if (ROUTER) {
-  banner += `
- * This bundle requires the ui-router-core.js bundle from the @uirouter/core package.`
-}
-banner += `
+ * ${pkg.description}
  * @version v${pkg.version}
  * @link ${pkg.homepage}
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -57,15 +45,6 @@ const BASE_CONFIG = {
 const ROUTER_CONFIG = Object.assign({
   moduleName: '@uirouter/angularjs',
   entry: 'lib-esm/index.js',
-  dest: 'release/ui-router-angularjs' + extension,
-  globals: { angular: 'angular', '@uirouter/core': '@uirouter/core' },
-  external: ['angular', '@uirouter/core'],
-}, BASE_CONFIG);
-
-// Also bundles the code from @uirouter/core into the same bundle
-const MONOLITHIC_ROUTER_CONFIG = Object.assign({
-  moduleName: '@uirouter/angularjs',
-  entry: 'lib-esm/index.js',
   dest: 'release/angular-ui-router' + extension,
   globals: { angular: 'angular' },
   external: 'angular',
@@ -90,7 +69,6 @@ const RESOLVE_CONFIG = Object.assign({}, BASE_CONFIG, {
 const CONFIG =
     RESOLVE ? RESOLVE_CONFIG :
     EVENTS ? EVENTS_CONFIG :
-    MONOLITHIC ? MONOLITHIC_ROUTER_CONFIG :
     ROUTER ? ROUTER_CONFIG : ROUTER_CONFIG;
 
 export default CONFIG;

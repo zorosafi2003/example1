@@ -173,6 +173,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -181,11 +182,38 @@
     </Compile>
     <Compile Include="Models\AddOrUpdate.cs" />
     <Compile Include="Models\DataAndCount.cs" />
-    <Compile Include="Models\CustomerEx.cs" />
-    <Compile Include="Models\ProductEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.directive.js" />
+    <Content Include="App\app.js" />
+    <Content Include="App\app.route.js" />
+    <Content Include="App\assets\img\delete.png" />
+    <Content Include="App\assets\img\add.png" />
+    <Content Include="App\assets\css\template.css" />
+    <Content Include="App\assets\img\gears.gif" />
+    <Content Include="App\controllers\customerCtrl\add.js" />
+    <Content Include="App\controllers\customerCtrl\edit.js" />
+    <Content Include="App\controllers\customerCtrl\view.js" />
+    <Content Include="App\controllers\productCtrl\add.js" />
+    <Content Include="App\controllers\productCtrl\edit.js" />
+    <Content Include="App\controllers\productCtrl\view.js" />
+    <Content Include="App\controllers\invoiceCtrl\add.js" />
+    <Content Include="App\controllers\invoiceCtrl\edit.js" />
+    <Content Include="App\controllers\invoiceCtrl\view.js" />
+    <Content Include="App\services\customer.js" />
+    <Content Include="App\services\invoice.js" />
+    <Content Include="App\services\product.js" />
+    <Content Include="App\shared\body.html" />
+    <Content Include="App\views\customer\add.html" />
+    <Content Include="App\views\customer\edit.html" />
+    <Content Include="App\views\customer\view.html" />
+    <Content Include="App\views\product\add.html" />
+    <Content Include="App\views\product\edit.html" />
+    <Content Include="App\views\product\view.html" />
+    <Content Include="App\views\invoice\add.html" />
+    <Content Include="App\views\invoice\edit.html" />
+    <Content Include="App\views\invoice\view.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -199,6 +227,9 @@
     </Content>
     <Content Include="bower.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\BootStrapUi\bootstrap.min.css" />
+    <Content Include="Scripts\BootStrapUi\ui-bootstrap-tpls-1.0.0.js" />
+    <Content Include="Scripts\BootStrapUi\ui-bootstrap-tpls-1.1.1.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -220,8 +251,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

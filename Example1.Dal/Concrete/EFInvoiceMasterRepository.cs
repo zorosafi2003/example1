@@ -11,7 +11,7 @@ namespace Example1.Dal.Concrete
 {
     public class EFInvoiceMasterRepository : IInvoiceMasterRepository
     {
-        public IEnumerable<object> Search(string text, int skip, int take)
+        public IEnumerable<TblInvoiceMaster> Search(string text, int skip, int take)
         {
             using (AppDbContext db = new AppDbContext())
             {
@@ -31,7 +31,7 @@ namespace Example1.Dal.Concrete
                 }
             }
         }
-        public IEnumerable<object> Search(string text)
+        public IEnumerable<TblInvoiceMaster> Search(string text)
         {
             using (AppDbContext db = new AppDbContext())
             {
@@ -98,7 +98,7 @@ namespace Example1.Dal.Concrete
             using (AppDbContext db = new AppDbContext())
             {
                 db.TblInvoiceMaster.Add(DataVerified(TblInvoiceMaster));
-                db.TblInvoiceDetail.AddRange(DataVerified(TblInvoiceMaster).tblInvoiceDetails);
+                db.TblInvoiceDetail.AddRange(TblInvoiceMaster.tblInvoiceDetails);
                 db.SaveChanges();
             }
 
@@ -118,7 +118,7 @@ namespace Example1.Dal.Concrete
 
                         db.TblInvoiceDetail.RemoveRange(db.TblInvoiceDetail.Where(x => x.TblInvoiceMasterGuid == TblInvoiceMaster.Guid).ToList());
 
-                        db.TblInvoiceDetail.AddRange(DataVerified(TblInvoiceMaster).tblInvoiceDetails);
+                        db.TblInvoiceDetail.AddRange(TblInvoiceMaster.tblInvoiceDetails);
 
                         db.SaveChanges();
 
@@ -147,7 +147,7 @@ namespace Example1.Dal.Concrete
         }
 
 
-        public IEnumerable<object> Search()
+        public IEnumerable<TblInvoiceMaster> Search()
         {
             using (AppDbContext db = new AppDbContext())
             {

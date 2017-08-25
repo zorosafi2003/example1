@@ -1,0 +1,73 @@
+﻿<div class="box-body">
+    <div class="row">
+      
+        <div class="  col-xs-6 form-group">
+            <label >Id</label>
+            <input class="form-control" ng-model="Obj.Id" readonly>
+        </div>
+        <div class=" col-xs-6 form-group">
+            <label >Date</label>
+            <input id="Date" class="form-control" ng-model="Obj.Date">
+        </div>
+        <div class=" col-xs-8 form-group">
+            <label >Customer</label>
+            <select id="DDCustomer" class="form-control" ng-model="Obj.tblCustomer" ng-options=" ObjCustomer.Name for ObjCustomer in ObjCustomers track by ObjCustomer.Guid " required></select>
+        </div>
+        <div class=" col-xs-4 form-group">
+            <label >Discount</label>
+            <input id="JournalMasterDate" class="form-control" ng-model="Obj.Discount" ng-change="TotalPrice()">
+        </div>
+      
+        <div class=" col-xs-12 form-group">
+            <label for="exampleInputPassword1">Notes</label>
+            <textarea class="form-control" rows="2" ng-model="Obj.Notes" ></textarea>
+        </div>
+    </div>
+    <div class="row" style="border-style: solid;border-radius: 10px;margin: 10px;padding: 5px;">
+       
+       
+    
+        <div class="  col-xs-8 ">
+            <select id="DDProduct" class="form-control" ng-model="Product" ng-options=" ObjProduct.Name for ObjProduct in ObjProducts track by ObjProduct.Guid " required></select>
+        </div>
+        <div class="  col-xs-3 ">
+            <input class="form-control" ng-model="Count" placeholder="Count">
+        </div>
+        <div class="  col-xs-1 ">
+            <a href="" ng-click="AddTabel()">  <img src="./app/assets/img/add.png" height="35px" /></a>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-12" style="min-height:150px;">
+            <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">Product</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="text-align:center;">Count</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">Price</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="text-align:center;">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr role="row" class="odd" style="text-align:center;" ng-repeat="Detail in Obj.tblInvoiceDetails">
+                        <td>{{Detail.TblProductName}}</td>
+                        <td><input  ng-model="Detail.Count" ng-change="ChangeCount($index ,Detail.Count )" style="text-align:center;"/></td>
+                        <td>{{Detail.TblProductPrice}}</td>
+                        <td><a href="" ng-click="RemoveRow($index)"> <img src="./app/assets/img/delete.png" height="25px" /></a></td>
+                    </tr>
+                    <tr ng-if="Obj.tblInvoiceDetails.length != 0">
+                       
+                        <td colspan="4" style="text-align:center;font-weight:bold;font-size:large;color:red;" ng-if="Total!= ''"> Total : {{Total}}</td>
+                    </tr>
+                </tbody>
+              
+            </table>
+        
+        </div>
+    </div>
+</div>
+<div class="box-footer" align="center">
+    <a class="btn  btn-success btn-flat " ng-click="save()" style="width:100px">Save</a>
+    <a class="btn btn-danger btn-flat " style="width:100px" ng-href="#/">Cancel</a>
+</div>
+
